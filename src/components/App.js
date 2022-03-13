@@ -38,7 +38,13 @@ class App extends Component {
   }
 
   render() {
-    const indianCities = this.cityList.filter(item => item.country === 'India');
+    const indianCities = this.cityList.filter(
+      (city) =>
+        city.country === "India" &&
+        (city.name === "Goa" ||
+          city.name === "Lonavala" ||
+          city.name === "Darjeeling")
+    ).filter((city, id) => id < 3);
     return (
       <div id="main">
         <ol>
